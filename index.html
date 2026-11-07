@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Dental Clinic | Advanced Care & Aesthetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: { 50: '#f0fdfa', 100: '#ccfbf1', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e', 900: '#134e4a' },
+                        slate: { 50: '#f8fafc', 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
+                    <i class="fa-solid fa-tooth text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">LUMEN<span class="text-teal-600">DENTAL</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#services" class="hover:text-teal-600 transition">Services</a>
+                <a href="#about" class="hover:text-teal-600 transition">About</a>
+                <a href="#technology" class="hover:text-teal-600 transition">Technology</a>
+                <a href="#testimonials" class="hover:text-teal-600 transition">Reviews</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+18005863632" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-teal-700 bg-teal-50 px-4 py-2 rounded-full">
+                    <i class="fa-solid fa-phone"></i> (800) 586-3632
+                </a>
+                <button onclick="openModal()" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-teal-600/25 transition transform hover:-translate-y-0.5">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-teal-50/50 via-white to-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-content space-y-6">
+                <div class="inline-flex items-center gap-2 bg-teal-100/70 text-teal-800 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+                    <i class="fa-solid fa-award"></i> Rated #1 Advanced Dental Studio
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Painless Care for Your <span class="text-teal-600">Brightest Smile</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Experience state-of-the-art dentistry delivered by world-class specialists in a calming, spa-like environment. From preventative care to advanced cosmetic implants.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button onclick="openModal()" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-teal-600/30 text-center transition">
+                        Schedule Consultation
+                    </button>
+                    <a href="#services" class="border-2 border-slate-200 hover:border-teal-600 text-slate-700 hover:text-teal-600 font-bold px-8 py-4 rounded-xl text-center transition">
+                        Explore Services
+                    </a>
+                </div>
+                <div class="flex items-center gap-8 pt-6 border-t border-slate-100">
+                    <div>
+                        <div class="text-2xl font-bold text-slate-900">15k+</div>
+                        <div class="text-sm text-slate-500">Happy Patients</div>
+                    </div>
+                    <div class="w-px h-8 bg-slate-200"></div>
+                    <div>
+                        <div class="text-2xl font-bold text-slate-900">99.8%</div>
+                        <div class="text-sm text-slate-500">Success Rate</div>
+                    </div>
+                    <div class="w-px h-8 bg-slate-200"></div>
+                    <div>
+                        <div class="text-2xl font-bold text-slate-900">20+</div>
+                        <div class="text-sm text-slate-500">Expert Doctors</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image relative">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Modern Dental Clinic" class="w-full h-[480px] object-cover transform hover:scale-105 transition duration-700">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="flex text-amber-400">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-bold text-sm">4.9 / 5.0</span>
+                    </div>
+                    <p class="text-xs text-slate-500">"Absolute lifesavers! Painless root canal and friendly staff."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-teal-600 font-bold uppercase tracking-widest text-xs">Our Expertise</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Comprehensive Dental Solutions</h2>
+                <p class="text-slate-600 mt-3">Tailored treatments utilizing cutting-edge digital dentistry and biocompatible materials.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-teal-500 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cosmetic Whitening</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Advanced laser teeth whitening that lifts up to 8 shades in a single 45-minute session with zero sensitivity.</p>
+                    <button onclick="openModal()" class="text-teal-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition">
+                        Book Treatment <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="service-card p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-teal-500 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Orthodontics & Braces</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Invisible clear aligners and ceramic braces engineered for fast, discreet teeth alignment and bite correction.</p>
+                    <button onclick="openModal()" class="text-teal-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition">
+                        Book Treatment <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="service-card p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-teal-500 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dental Implants</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Permanent, titanium-anchored tooth replacements that look, feel, and function exactly like natural teeth.</p>
+                    <button onclick="openModal()" class="text-teal-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition">
+                        Book Treatment <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full mx-4 p-8 relative shadow-2xl animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-teal-600 font-bold uppercase text-xs tracking-wider">Appointment Request</span>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">Book Your Visit</h3>
+                <p class="text-sm text-slate-500">Fill in your details and we will instantly confirm your slot.</p>
+            </div>
+            <form onsubmit="handleBooking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Full Name</label>
+                    <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone Number</label>
+                    <input type="tel" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Service</label>
+                        <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500">
+                            <option>Cosmetic Whitening</option>
+                            <option>Orthodontics</option>
+                            <option>Dental Implants</option>
+                            <option>Routine Checkup</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-teal-600/30 transition mt-2">
+                    Confirm Appointment
+                </button>
+            </form>
+            <div id="successMessage" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900">Appointment Confirmed!</h4>
+                <p class="text-sm text-slate-500 mt-2">We have sent a confirmation SMS with your doctor details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-center gap-2.5 mb-6">
+                    <div class="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-tight">LUMEN<span class="text-teal-400">DENTAL</span></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">Pioneering gentle, high-precision dental healthcare for the modern family.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-teal-400">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-slate-400">
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#technology" class="hover:text-white transition">Technology</a></li>
+                    <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-teal-400">Working Hours</h4>
+                <p class="text-sm text-slate-400 mb-2">Monday - Friday: 8:00 AM - 7:00 PM</p>
+                <p class="text-sm text-slate-400">Saturday: 9:00 AM - 4:00 PM</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-teal-400">Emergency Care</h4>
+                <p class="text-sm text-slate-400 mb-4">24/7 Priority emergency dental helpline for active patients.</p>
+                <a href="tel:+18005863632" class="text-teal-400 font-bold hover:underline">(800) 586-3632</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 Lumen Dental Clinic. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+        function handleBooking(e) {
+            e.preventDefault();
+            event.target.style.display = 'none';
+            document.getElementById('successMessage').classList.remove('hidden');
+            setTimeout(() => {
+                closeModal();
+                event.target.style.display = 'block';
+                document.getElementById('successMessage').classList.add('hidden');
+            }, 3000);
+        }
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".hero-content > *", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+        gsap.from(".hero-image", {
+            opacity: 0,
+            scale: 0.95,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "power3.out"
+        });
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                },
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                delay: i * 0.15,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>
